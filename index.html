@@ -53,6 +53,29 @@
         .coming-soon {
             font-style: italic;
         }
+
+    .icon-button {
+      display: inline-block;
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #808080; /*#007BFF; /* Change the background color to your preference */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Add some spacing between the buttons */
+    .icon-button + .icon-button {
+      margin-left: 5px;
+    }
+
+    .icon-container {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+    }
     </style>
 </head>
 
@@ -61,6 +84,19 @@
         <img src="./logo.png" alt="MySkin Data Logo" class="logo">
         <h1>MySkin Data</h1>
         <p>Coming Soon!</p>
+
+  <div class="icon-container">
+    <!-- Button with a policy icon -->
+    <a href="./policy.html" class="icon-button">
+      Privacy Policy
+    </a>
+
+    <!-- Button with a terms icon -->
+    <a href="./terms.html" class="icon-button">
+      Terms of Service
+    </a>
+  </div>
+
     </div>
 </body>
 
