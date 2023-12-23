@@ -29,13 +29,13 @@
 
         @font-face {
             font-family: 'PlayfairDisplay-ExtraBoldItalic';
-            src: url('./PlayfairDisplay-ExtraBoldItalic.ttf') format('truetype');
+            src: url('./PlayfairDisplay-ExtraBoldItalic.ttf') format('truetype'),
+                    url('./PlayfairDisplaySC-BoldItalic.woff2') format('woff2');
             /* Add other font formats with appropriate URLs */
             font-weight: bold;
             font-style: italic;
             /* Define font-weight and font-style if available */
         }
-
 
         .bottom-right-text {
           position: absolute;
@@ -52,7 +52,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #3B4133;
         }
 
@@ -62,7 +61,7 @@
 
         h1 {
             color: #fff;
-            font-size: 4em;
+            font-size: 5em;
             margin-bottom: 10px;
             font-family: 'PlayfairDisplay-ExtraBoldItalic', Arial, sans-serif;
             /* Apply custom font to h1 */
@@ -125,7 +124,41 @@
 
         .centered-cell {
           text-align: center; /* Aligns text horizontally in the cell */
-          vertical-align: middle; /* Aligns content vertically in the cell */
+          vertical-align: bottom; /* Aligns content vertically in the cell */
+        }
+
+        .desktop-only,
+        .mobile-only {
+          display: none;
+        }
+
+        /* Show desktop image when the screen width is above 768px (adjust as needed) */
+        @media screen and (min-width: 769px) {
+          .desktop-only {
+            display: block; /* Show the desktop image */
+          }
+        }
+
+        /* Show mobile image when the screen width is 768px or less (adjust as needed) */
+        @media screen and (max-width: 768px) {
+          .mobile-only {
+            display: block; /* Show the mobile image */
+          }
+        }
+
+        .mobile-container {
+          display: flex;
+          justify-content: center;
+        }
+        .mobile-container img {
+          /* Optionally, you can set a max-width to prevent the image from overflowing */
+          max-width: 100%; /* Adjust as needed */
+        }
+
+        .mobile-container a {
+            margin-right: 10px; /* Adjust the margin as needed to create space between links */
+            margin-left: 10px; /* Adjust the margin as needed to create space between links */
+
         }
 
     </style>
@@ -133,9 +166,34 @@
 
 <body>
       <div class="table-container">
-          <table>
+        <h1 style="text-align: center;">MySkin Data</h1>
+
+        <span class="mobile-only">
+            <div class="mobile-container">
+                <img src="./iphone.png" alt="Image 1" class="overlay-image">
+            </div>
+
+            <div class="mobile-container">
+                <a href="https://apps.apple.com/us/app/myskin-data/id6449375671" >
+                    <img src="./appleblack.svg" alt="Button">
+                </a>
+            </div>
+
+            <div class="mobile-container">
+                <a href="./policy.html" >Privacy Policy</a> <p> </p>
+                <a href="./terms.html" >Terms of Service</a>
+            </div>
+          </span>  
+
+          <table class="desktop-only">
               <tr>
-                 <td colspan="2" class="centered-cell"><h1>MySkin<br>Data</h1></td>
+                 <td colspan="2" class="centered-cell">
+                     <a href="https://apps.apple.com/us/app/myskin-data/id6449375671" >
+                        <img src="./appleblack.svg" alt="Button">
+                    </a> <br> <br>
+                    <a href="./policy.html" >Privacy Policy</a> <br>
+                    <a href="./terms.html" >Terms of Service</a>
+                 </td>
                  <td rowspan="3" style="padding: 0;"><img src="./iphone.png" alt="Image 1" class="overlay-image"></td>
                  <td></td>
               </tr> 
@@ -145,18 +203,12 @@
                 <td><img src="./logo.png" alt="Image 1" class="repeated-image"></td>
               </tr>
               <tr>
-                <td colspan="2" class="centered-cell"><a href="https://apps.apple.com/us/app/myskin-data/id6449375671">
-                        <img src="./appleblack.svg" alt="Button">
-                    </a>
+                <td colspan="2" class="centered-cell">
                 </td>
                 <td></td>
               </tr> 
         </table>
       </div>
-      <div class="bottom-right-text">
-    <a href="./policy.html" >Privacy Policy</a>
-    <a href="./terms.html" >Terms of Service</a>
-  </div>
 </body>
 
 </html>
