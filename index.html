@@ -103,6 +103,17 @@
             position: relative;
         }
 
+        .header-image {
+            /*
+          position: absolute;
+          top: 50%;
+          right: 10px; */ /* Adjust the right distance as needed */
+        /*  transform: translateY(-50%);
+          z-index: 1;*/ /* Higher z-index to overlay on top of the table */
+          margin-top: 20px;
+          max-width: 60%; /* Maximum height of the overlay image */
+        }
+
         .overlay-image {
             /*
           position: absolute;
@@ -166,9 +177,14 @@
 
 <body>
       <div class="table-container">
-        <h1 style="text-align: center;">MySkin Data</h1>
+        <h1 class="desktop-only" style="text-align: center;">MySkin Data</h1>
 
         <span class="mobile-only">
+
+        <div class="mobile-container">
+                <img src="./header.png" alt="Image 1" class="header-image">
+            </div>
+
             <div class="mobile-container">
                 <img src="./iphone.png" alt="Image 1" class="overlay-image">
             </div>
