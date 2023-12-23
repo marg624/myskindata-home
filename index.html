@@ -4,9 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySkin Data - Coming Soon</title>
+    <title>MySkin Data</title>
     <link rel="shortcut icon" type="image/png" href="./logo.png">
     <style>
+
+        /*
+        light green  #B5BEAF
+        dark green #3B4133
+        pink #BA9996
+
+        */
+        .repeated-image {
+          max-width: 150px; /* Adjust the maximum width of the image as needed */
+          max-height: 150px; /* Adjust the maximum height of the image as needed */
+          width: auto;
+          height: auto;
+          background-color: #fff; /* Change the background color as needed */
+          padding: 0 10px; /* Adjust padding as needed */
+          flex-shrink: 0; /* Prevent images from shrinking when screen size reduces */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow size */
+          border-radius: 12px; 
+          border: 1px solid #fff;
+        }
+
         @font-face {
             font-family: 'PlayfairDisplay-ExtraBoldItalic';
             src: url('./PlayfairDisplay-ExtraBoldItalic.ttf') format('truetype');
@@ -14,6 +34,15 @@
             font-weight: bold;
             font-style: italic;
             /* Define font-weight and font-style if available */
+        }
+
+
+        .bottom-right-text {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          color: #BA9996; /* Text color */
+          font-size: 14px; /* Font size */
         }
 
         body {
@@ -24,21 +53,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-        /*    background-color: #f5f5f5;*/
+            background-color: #3B4133;
         }
 
         .container {
             text-align: center;
         }
 
-        .logo {
-            max-width: 350px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
-
         h1 {
-            color: #333;
+            color: #fff;
             font-size: 4em;
             margin-bottom: 10px;
             font-family: 'PlayfairDisplay-ExtraBoldItalic', Arial, sans-serif;
@@ -54,50 +77,86 @@
             font-style: italic;
         }
 
-    .icon-button {
-      display: inline-block;
-      padding: 10px;
-      text-decoration: none;
-      color: #fff;
-      background-color: #808080; /*#007BFF; /* Change the background color to your preference */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        .icon-button {
+          display: inline-block;
+          padding: 10px;
+          text-decoration: none;
+          color: #fff;
+          background-color: #808080; /*#007BFF; /* Change the background color to your preference */
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
 
-    /* Add some spacing between the buttons */
-    .icon-button + .icon-button {
-      margin-left: 5px;
-    }
+        /* Add some spacing between the buttons */
+        .icon-button + .icon-button {
+          margin-left: 5px;
+        }
 
-    .icon-container {
-      margin-top: auto;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px;
-    }
+        .icon-container {
+          margin-top: auto;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+        }
+
+        .table-container {
+            position: relative;
+        }
+
+        .overlay-image {
+            /*
+          position: absolute;
+          top: 50%;
+          right: 10px; */ /* Adjust the right distance as needed */
+        /*  transform: translateY(-50%);
+          z-index: 1;*/ /* Higher z-index to overlay on top of the table */
+          max-height: 500px; /* Maximum height of the overlay image */
+        }
+
+        table {
+          border-collapse: collapse;
+          z-index: 0; /* Lower z-index to keep it below the overlay */
+        }
+
+        td {
+          padding: 10px;
+        }
+
+        .centered-cell {
+          text-align: center; /* Aligns text horizontally in the cell */
+          vertical-align: middle; /* Aligns content vertically in the cell */
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="./logo.png" alt="MySkin Data Logo" class="logo">
-        <h1>MySkin Data</h1>
-        <p>Coming Soon!</p>
-
-  <div class="icon-container">
-    <!-- Button with a policy icon -->
-    <a href="./policy.html" class="icon-button">
-      Privacy Policy
-    </a>
-
-    <!-- Button with a terms icon -->
-    <a href="./terms.html" class="icon-button">
-      Terms of Service
-    </a>
+      <div class="table-container">
+          <table>
+              <tr>
+                 <td colspan="2" class="centered-cell"><h1>MySkin<br>Data</h1></td>
+                 <td rowspan="3" style="padding: 0;"><img src="./iphone.png" alt="Image 1" class="overlay-image"></td>
+                 <td></td>
+              </tr> 
+              <tr>
+                <td><img src="./logo.png" alt="Image 1" class="repeated-image"></td>
+                <td><img src="./logo.png" alt="Image 1" class="repeated-image"></td>
+                <td><img src="./logo.png" alt="Image 1" class="repeated-image"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="centered-cell"><a href="https://apps.apple.com/us/app/myskin-data/id6449375671">
+                        <img src="./appleblack.svg" alt="Button">
+                    </a>
+                </td>
+                <td></td>
+              </tr> 
+        </table>
+      </div>
+      <div class="bottom-right-text">
+    <a href="./policy.html" >Privacy Policy</a>
+    <a href="./terms.html" >Terms of Service</a>
   </div>
-
-    </div>
 </body>
 
 </html>
